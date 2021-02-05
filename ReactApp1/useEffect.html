@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+      
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root">
+  
+        </div>
+      <script type="text/babel"> 
+     const { useState, useEffect } = React;
+    
+                /*funciton returning App*/
+                function App({ lakes }){
+                    const [val, setVal]=useState("");
+                    const [val2, setVal2]=useState("");
+
+                    useEffect(()=>{
+                        console.log(`the value is ${val}`);
+                    },[val])
+                    useEffect(()=>{
+                        console.log(`the value is ${val2}`);
+                    },[val2])
+                    return(
+                        <>
+                        <label> Favourite Phrase:
+                         <input value={val} type="text" onChange={(e)=>{ setVal(e.target.value)}}/>
+                            </label>
+                        <label> Second Favourite Phrase:
+                         <input value={val2} type="text" onChange={(e)=>{ setVal2(e.target.value)}}/>
+                            </label>
+                        </>
+                    )
+                    }
+                /*React Dom Render */
+        ReactDOM.render(
+            <App />,document.getElementById('root'));
+    
+        </script>
+        <!-- <script src='./index.js' type='text/babel'></script>--> 
+    </body>
+    </html>

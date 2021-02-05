@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+      
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root">
+  
+        </div>
+      <script type="text/babel"> 
+     const { useState, useEffect } = React;
+                /*funciton returning App*/
+                function App({ lakes }){
+                    const [status, setStatus]= useState("Open");
+                    const [entry,setEntry]=useState("Allowed");
+                    return (
+                        <div>
+                            <h1> Status:{status}</h1>
+                            <button onClick={()=>{setStatus('Closed')}} >Close</button>
+                            <button onClick={()=>{setStatus('Open')}} >Open</button>
+
+                            <h1> Entry:{entry}</h1>
+                            <button onClick={()=>{setEntry('Allowed')}} >Allow</button>
+                            <button onClick={()=>{setEntry('Not Allowed')}} >Dont Allow</button>
+                            
+                        </div>
+                    )
+                }
+                /*React Dom Render */
+        ReactDOM.render(
+            <App />,document.getElementById('root'));
+    
+        </script>
+        <!-- <script src='./index.js' type='text/babel'></script>--> 
+    </body>
+    </html>
