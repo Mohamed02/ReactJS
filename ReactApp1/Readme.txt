@@ -2,7 +2,10 @@ Notes
 
 What type of ReactJS tool kit to go for?
 
-1. For learing/creating a new react app you can create it through nodejs create react plugin
+1. For learing/creating a new react app or SPA you can create it through nodejs create react plugin
+    run the command  to create an app
+
+    npx create-react-app hellow-react --use-npm
 
 2. For Building Pages which are rendered from server use Next.js
 
