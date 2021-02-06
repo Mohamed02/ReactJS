@@ -23,6 +23,10 @@ varialble only for components and not for functions
 
 useEffect Function:
 
-use effect function is helpful to execute any operation which are not a part of rendering ui, this includes
-giving an alert message or console.log
+use effect function is used to execute any operation which are not a part of rendering ui, this includes
+giving an alert message or console.log or it can also be used to making backend call to retreive data
 
+
+useReduced Function: 
+
+this is used to toggle the value of input field
