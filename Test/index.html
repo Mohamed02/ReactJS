@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+      
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root">
+  
+        </div>
+      <script type="text/babel"> 
+      /*Lake List initalization*/
+            const lakeList = [
+            {id:"1",name:"Echo Lake"},
+            {id:"2",name:"Maud Lake"},
+            {id:"3",name:"Cascade Lake"}
+            ];
+                /* funciton retruning Lake element*/
+                function Lake({ lake }){ 
+                    if(lake.name=="Echo Lake"){
+                    }else{
+                        return <li  >{lake.name + lake.id}</li>;
+                    }
+                
+                }
+                /*funciton returning App*/
+                function App({ lakes }){
+                    return (
+                        <ul>{
+                            lakes.map((lake,i)=>( <Lake key={i} lake={lake}/>))
+                        }</ul>
+                    )
+                }
+                /*React Dom Render */
+        ReactDOM.render(
+            <App lakes={lakeList}/>,document.getElementById('root'));
+    
+        </script>
+        <!-- <script src='./index.js' type='text/babel'></script>--> 
+    </body>
+    </html>
