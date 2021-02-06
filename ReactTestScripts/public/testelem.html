@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+      
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root">
+  
+        </div>
+      <script type="text/babel"> 
+     const { useState, useEffect } = React;
+    
+                /*funciton returning App*/
+                function GitHubUser({ login }){
+                    const [data,setData]=useState(null);
+                    useEffect(()=>{
+                            fetch(`https://api.github.com/users/${login}`)
+                            .then((res) =>res.json())
+                            .then(setData)
+                            .catch(console.error);
+
+                    })
+                    if(data){
+                        return (<><p>{data.login}</p>
+                        <h2>{data.avatar_url}</h2>
+                        </>)
+                    }
+                    else{
+                        return null;
+                    }
+                }
+                function App({ lakes }){
+                    return <GitHubUser login="Mohamed02"/>
+                    }
+                /*React Dom Render */
+        ReactDOM.render(
+            <App />,document.getElementById('root'));
+    
+        </script>
+        <!-- <script src='./index.js' type='text/babel'></script>--> 
+    </body>
+    </html>
