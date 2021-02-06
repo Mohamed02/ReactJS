@@ -15,9 +15,8 @@
     
                 /*funciton returning App*/
                 function App({ lakes }){
-                    const [val, setVal]=useState("");
+                    let [val, setVal]=useState("Bun in the Oven");
                     const [val2, setVal2]=useState("");
-
                     useEffect(()=>{
                         console.log(`the value is ${val}`);
                     },[val])
