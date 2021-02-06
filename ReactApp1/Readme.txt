@@ -41,8 +41,15 @@ useEffect Function:
 use effect function is used to execute any operation which are not a part of rendering ui, this includes
 giving an alert message or console.log or it can also be used to making backend call to retreive data
 
+   By Default useEffect watches for any changes in state and it executes . If we want to specific state varaible then 
     useeffect can be used to watch any variable and do some non-UI operations
 
+
+     useEffect(()=>{
+                        console.log(`the value is ${val2}`);
+                    })
+
+                    /* the above code snippet watch for all the Sate variable and gets executed when there is a change */
 
      useEffect(()=>{
                         console.log(`the value is ${val2}`);
@@ -86,3 +93,10 @@ Fragment:
     The DOM elements which are passed to any of the React compoennts or funcitons for rendering
     must have a single Parent  which wrapps the entire all the other element . Tha parent can be a div
     or it can be fragment . that is <fragment></fragment> or a simple <> child content </> 
+
+
+Testing With React:
+
+    Test Driven Development can be done with React with the help of JEST. 
+    Refer to the project files  1- checkbox.test.js & checkbox.js  and 2. App.test.js and App.js for examples
+

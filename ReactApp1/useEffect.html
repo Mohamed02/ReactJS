@@ -17,12 +17,15 @@
                 function App({ lakes }){
                     let [val, setVal]=useState("Bun in the Oven");
                     const [val2, setVal2]=useState("");
+                    const [val3, setVal3]=useState("");
                     useEffect(()=>{
                         console.log(`the value is ${val}`);
                     },[val])
                     useEffect(()=>{
                         console.log(`the value is ${val2}`);
                     },[val2])
+
+
                     return(
                         <>
                         <label> Favourite Phrase:
@@ -30,6 +33,10 @@
                             </label>
                         <label> Second Favourite Phrase:
                          <input value={val2} type="text" onChange={(e)=>{ setVal2(e.target.value)}}/>
+                            </label>
+ 
+                        <label> Thir Favourite Phrase:
+                         <input value={val3} type="text" onChange={(e)=>{ setVal3(e.target.value)}}/>
                             </label>
                         </>
                     )
