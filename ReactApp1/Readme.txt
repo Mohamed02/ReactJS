@@ -100,3 +100,7 @@ Testing With React:
     Test Driven Development can be done with React with the help of JEST. 
     Refer to the project -ReactTestScripts files  1- checkbox.test.js & checkbox.js  and 2. App.test.js and App.js for examples
 
+Routes with React:
+
+Single Page Applications also can be built with ReactJS usign Routes. Refer to the files index.js, pages.js and App.js
+in the project React Routes
