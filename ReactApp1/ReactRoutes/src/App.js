@@ -5,6 +5,8 @@ import {
   AboutUs,
   Events,
   ContactUs,
+  CompanyHistory,
+  OurMission,
   Oops
 } from './pages'
 import './App.css';
@@ -14,7 +16,10 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}></Route>
    
-      <Route path='/aboutus' element={<AboutUs/>}></Route>
+      <Route path='/aboutus' element={<AboutUs/>}>
+          <Route path='/history' element={<CompanyHistory/>}></Route>
+          <Route path='/mission' element={<OurMission/>}></Route>
+      </Route>
    
       <Route path='/events' element={<Events/>}></Route>
    

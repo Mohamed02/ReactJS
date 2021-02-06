@@ -1,4 +1,4 @@
-import {Link, useLocation } from 'react-router-dom';
+import {Link, Outlet, useLocation } from 'react-router-dom';
 export function Home(){
     return (
     <>
@@ -12,7 +12,10 @@ export function Home(){
 
 export function AboutUs(){
     return (
+        <>
         <h1>AboutUs</h1>
+        <Outlet/>
+        </>
     )
 };
 
@@ -28,6 +31,17 @@ export function ContactUs(){
     )
 };
 
+export function CompanyHistory(){
+    return (
+        <h1>CompanyHistory</h1>
+    )
+};
+
+export function OurMission(){
+    return (
+        <h1>OurMission</h1>
+    )
+};
 export function Oops(){
     let loca=useLocation();
     return (

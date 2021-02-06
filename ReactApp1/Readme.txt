@@ -103,4 +103,4 @@ Testing With React:
 Routes with React:
 
 Single Page Applications also can be built with ReactJS usign Routes. Refer to the files index.js, pages.js and App.js
-in the project React Routes
+in the project
