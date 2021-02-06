@@ -30,3 +30,10 @@ giving an alert message or console.log or it can also be used to making backend 
 useReduced Function: 
 
 this is used to toggle the value of input field
+
+
+Fragment:
+
+    The DOM elements which are passed to any of the React compoennts or funcitons for rendering
+    must have a single Parent  which wrapps the entire all the other element . Tha parent can be a div
+    or it can be fragment . that is <fragment></fragment> or a simple <> child content </> 
