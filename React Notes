@@ -1,0 +1,18 @@
+1. AngularJS vs React JS:
+https://www.gurutechnolabs.com/angularjs-vs-reactjs/ 
+https://www.geeksforgeeks.org/angular-vs-reactjs-which-one-is-most-in-demand-frontend-development-framework-in-2019/
+
+2. What are pure functions:
+
+The function which gives the same output for a given input variable (all the time) are called as pure functions. The function also must not modify any scope outside
+the function scope
+
+    the function arguments(objects) are passed by reference, hence a funciton could accidently modify the scope outside of it . Please refer to the below example
+    
+      function fun1={ var p1={name:"ismail"}; fun2(p1); console.log("value of name"+p1.name)}
+     funciton fun2(p2){  p2.name="zaina"; console.log("value of updated name is "+ p2.name)}  
+     
+ 3. What is virtual DOM
+   
+
+
