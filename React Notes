@@ -12,7 +12,58 @@ the function scope
       function fun1={ var p1={name:"ismail"}; fun2(p1); console.log("value of name"+p1.name)}
      funciton fun2(p2){  p2.name="zaina"; console.log("value of updated name is "+ p2.name)}  
      
- 3. What is virtual DOM
-   
+3. What is virtual DOM and immutablity
+ 
+    Virtual DOM is an concept of storing the copy of entire page DOM structure in memory. So whenever there is a change in state value, the exact changes
+    in the State are tracked and Virutal DOM is updated first and the changes are then merged with the Browser DOM. This process is called reconciliation
+    . For this reason it is strictly recommended to not to mutate the state. that is whenever you want to change the state, 
+    create a copy of the state and then update the changes there.  What react do is , it will compare the two objects and re render the DOM which 
+    corresponds to the updated data.
+    
+    
+ 4. How to achieve immutablity.
+  
+     Immutablity can be taken care only for non-primitive data types , which are passed by reference. Primitive data types are passed by value
+        
+    for e.g
+
+    function Func1(){
+        var _a=1;
+        var _b=[1,2,3];
+        console.log("In Func1 Value of A: "+ _a + " and B "+ _b +" before function invocation");
+        Func2(_a,_b);
+        console.log("In Func1 Value of A: "+ _a + " and B "+ _b +" after function invocation");
+    };
+
+    function Func2(a,b){
+        a=5;
+        b.push(10);
+        console.log("In Func2 Value of A: "+ a + " and B"+ b );
+    }
+
+    Func1();
+
+  In the output of above code, if we notice the that inside function Func1, the value of _b is modified after invocation of Func2.This is 
+  because, the value of _b is passed by reference to function - Func2. And when the value of b is modified within Func2, the main object is modified
+  the which means that Func2 is not a  "Pure function" as it has modified some variable in the scope outside of it through mutation of b. 
+  
+  To avoid such muation let us create a new object inside Func2 and return that
+  
+   function Func1(){
+            var _a=1;
+            var _b=[1,2,3];
+            console.log("In Func1 Value of A: "+ _a + " and B "+ _b +" before function invocation");
+            Func2(_a,_b);
+            console.log("In Func1 Value of A: "+ _a + " and B "+ _b +" after function invocation");
+        };
+        
+        function Func2(a,b){
+            a=5;
+            c=b.concat(10);
+            console.log("In Func2 Value of A: "+ a + " and B"+ c );
+        }
+     
+        Func1();
+        
 
 
