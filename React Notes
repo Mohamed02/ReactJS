@@ -115,4 +115,7 @@ the function scope
 
 
 6. Memoization
-
+    if a function is a pure function it returns same value for a given input always. and its ouput changes only when the input is changed.
+    
+   then if the function is called with the same input again and again, it is better to store the  output somewhere to use it next instead of calling 
+   the funciton , This concept is called memoization.
