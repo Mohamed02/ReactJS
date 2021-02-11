@@ -91,7 +91,7 @@ the function scope
              During Update
                         getDerivedStateFromProps();
                             -- if the state of the component has to be derived from teh props, then create a derived state and return the object 
-                        ShouldCompoenentUdpate();
+                        ShouldCompoenentUdpate(nextProps, nextState);
                             --By default it will return true and the component will be updated every time whenver there is change in the state. But you 
                             can override it by doing some check to prevent compoennt from udpating. a component whcih doesnt override the default behaviour is
                             called as Pure Components
