@@ -65,5 +65,54 @@ the function scope
      
         Func1();
         
+5. LifeCycle of React Components 
 
+   React Components go through stages such as 
+            Mounting (ie when it is initially rendered), 
+            Update (ie updated caused when any change in the state) and 
+            UnMounting stage (ie when the component it removed from the DOM)
+            
+            
+            There several methods which gets invoked during these stages
+            
+            During Mounting
+                        Constructor(prop)    
+                             Do State Initialization here
+                        getDerivedStateFromProps(props, state) ;
+                               ----if the state of the component has to be derived from teh props, then create a derived state and return the object 
+                               . this method is better used durign component update.
+                              
+                         render();
+                            ---- Return the ELEMENT which has to be rendrered.
+                        ComponentDidMount();   
+                                ----Make Rest Calls for loading data here  or in useEffect method 
+                                ----Dont call set state here ..becuase it will again call render and it will be in infinite loop
+                                ---- No Return value
+             During Update
+                        getDerivedStateFromProps();
+                            -- if the state of the component has to be derived from teh props, then create a derived state and return the object 
+                        ShouldCompoenentUdpate();
+                            --By default it will return true and the component will be updated every time whenver there is change in the state. But you 
+                            can override it by doing some check to prevent compoennt from udpating. a component whcih doesnt override the default behaviour is
+                            called as Pure Components
+                        render();
+                        getSnapShotBeforeUpdate(prevProps, prevState);  
+                            -- This is invoked right before the most recently rendered output is committed to DOM. it enables your compoenent to capture some 
+                            information. from the dom, before it is potentialy changed. teh value returned by this method is passed as the parameter for 
+                            CompoentDidupdate(prevProps, prevState, snapshotValue)
+                        ComponentDidupdate(prevProps, prevState, snapShot);
+                            --This is the best place to do network request
+                            ------Dont call set state here ..becuase it will again call render and it will be in infinite loop. If you call then wrap
+                            it inside some condition
+              During UnMounting
+                        ComponentWillUnMount();
+                            this is invoked befroe teh component is unmounterd and destoried. Invaldiate timers, cancel network request and other cleanup
+                            operations to be done here.
+                        
+      Error Handling methods:
+                        getDerviedStateFromErrror();
+                        componentDidCatch()
+
+
+6. Memoization
 
